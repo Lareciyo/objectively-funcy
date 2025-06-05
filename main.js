@@ -1,11 +1,20 @@
 // YOUR CODE GOES HERE!!!
 /*************************/
+
 const getFirstName = (obj) => obj.firstName
+
 
 const getLastName = (obj) => obj.lastName
 
-const getFullName = (obj) =>
-  `${obj.firstName} ${obj.lastName}`
+function getFullName(obj){
+  let fullName = ''
+  for(let key in obj){
+    if(key === 'firstName' || key === 'lastName'){
+      fullName += obj[key] + ' '
+    }
+  }
+  return fullName.trim()
+}
 
 const setFirstName = (obj, name) => obj.firstName = name
 
